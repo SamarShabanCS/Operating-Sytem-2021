@@ -28,7 +28,7 @@ default:
 for(; n > 0; n--) {
 
 puts(message);
-//sleep(1);
+sleep(1);
 }  
 
 exit(0);

@@ -16,11 +16,10 @@ printf("hello, I am child(pid:%d)\n",(int)getpid());
 close(STDOUT_FILENO);
 open("./p4.output",O_CREAT|O_WRONLY|O_TRUNC,S_IRWXU);
 char *myargs[3];
-myargs[0]=strdup("wc");
-myargs[1]=strdup("p4.c");
+myargs[0]="wc";
+myargs[1]="p2.c";
 myargs[2]=NULL;
 execvp(myargs[0],myargs);
-printf("this shouldn't print out");
 }else{
 int wc=wait(NULL);
 printf("hello, i am parent of %d (wc: %d) (pid:%d)\n",rc,wc, (int)getpid());
